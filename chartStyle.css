@@ -1,0 +1,22 @@
+html,
+body {
+  height: 100%;
+}
+
+html {
+  display: table;
+  margin: auto;
+}
+
+body {
+  display: flex;
+  gap: 8px;
+}
+
+#chartContainer {
+  border: 1px solid rgb(97, 120, 168);
+}
+
+#chartContainer1 {
+  border: 1px solid rgb(211, 15, 15);
+}

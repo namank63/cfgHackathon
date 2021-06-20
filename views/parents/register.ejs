@@ -1,0 +1,51 @@
+<%- include('../partials/header') %>
+
+    <div class="container mt-5 col-6 offset-3">
+        <h1>Register</h1>
+    <form action="/register" method="POST" class="validated-form" novalidate>
+        <div class="mb-3">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control" type="text" id="username" name="username" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" type="password" id="password" name="password" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="mobile">Mobile</label>
+            <input class="form-control" type="number" id="mobile" name="mobile" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" type="email" id="email" name="email" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="address">Address</label>
+            <input class="form-control" type="text" id="address" name="address" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        
+
+        <button class="btn btn-dark">Register</button>
+    </form>
+    </div>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="chartStyle.css">
+</head>
+<body>
+    <div id="chartContainer" style="height: 500px; width: 500px;"></div>
+    <div id="chartContainer1" style="height: 500px; width: 500px;"></div>
+
+    
+</body>
+<script>
+window.onload = function () {
+var dataPoints = [];
+var DataPoints=[];
+
+var chart = new CanvasJS.Chart("chartContainer",{
+	title:{
+		display:true,
+          text:'Registration Received from different geo-locations',
+          fontSize:20,
+          fontColor:'#000'
+	},
+	exportEnabled: true,
+	animationEnabled: true,
+	legend:{
+		cursor: "pointer",
+		itemclick: explodePie
+	},
+	data: [{
+		type: "pie",
+		showInLegend: true,
+		toolTipContent: "{name}: <strong>{y}%</strong>",
+		indexLabel: "{name} - {y}%",
+		dataPoints: dataPoints,
+	}]
+});
+
+
+var anotherchart = new CanvasJS.Chart("chartContainer1",{
+	title:{
+		display:true,
+          text:'Disabilities in different age group',
+          fontSize:20,
+          fontColor:'#000'
+	},
+    exportEnabled:true,
+    theme: "light2", // "light1", "light2", "dark1", "dark2"
+	animationEnabled: true,
+	axisX: {
+		title:"Month",
+	},
+	axisY:{
+		title: "Number of Child with disabilities",
+		includeZero: true,
+	},
+	data: [{        
+		type: "line",
+		markerSize: 10,
+		dataPoints: DataPoints,
+	}]
+});
+
+
+
+$.getJSON("a.json", function(data) {  
+	$.each(data, function(key, value){
+        for(var v in value){
+            if(key=="reg")
+                dataPoints.push({name: value[v].name, y: value[v].count});
+            else
+            {
+                
+                if(value[v].count>500){
+                    DataPoints.push({ x: new Date(value[v].year,value[v].month), y: value[v].count, markerType: "cross",  markerColor: "tomato" });
+                }
+                else{
+                    DataPoints.push({ x: new Date(value[v].year,value[v].month), y: value[v].count, markerType: "triangle",  markerColor: "#6B8E23" });
+                }
+            }
+                
+        }
+	});	
+	chart.render();
+    anotherchart.render();
+});
+}
+function explodePie (e) {
+	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+	} else {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+	}
+	e.chart.render();
+
+}
+  </script>
+</html>

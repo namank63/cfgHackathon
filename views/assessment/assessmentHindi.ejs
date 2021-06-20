@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>मूल्यांकन</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="pagination.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body class="bg-dark">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="d-flex justify-content-center my-4">
+
+         
+
+          <div class="inner">
+
+            <div class="p d-block" id="page1Div">
+              <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+                <input name="name" type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="नाम">
+            </div>
+            <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+              <label for="select">लिंग</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="sex" id="MaleGender">
+                <label class="form-check-label" for="MaleGender">
+                    पुरुष
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="sex" id="FemaleGender" input>
+                <label class="form-check-label" for="FemaleGender">
+                    महिला
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="sex" id="OtherGender" input>
+                <label class="form-check-label" for="OtherGender">
+                    अन्य
+                </label>
+              </div>
+              
+            </div>
+            <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+              <div class="form-group">
+                <label >जन्म की तारीख : </label>
+                <input type="date" name="dob" min="1000-01-01"
+                      max="3000-12-31" class="form-control">
+              </div>
+          </div> 
+          <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+            <label for="select">रक्त समूह</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="bloodGroup" id="A+">
+                <label class="form-check-label" for="A+">
+                  A+
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="bloodGroup" id="B+" input>
+                <label class="form-check-label" for="B+">
+                  B+
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="bloodGroup" id="AB+" input>
+                <label class="form-check-label" for="AB+">
+                  AB+
+                </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="bloodGroup" id="AB-" input>
+                  <label class="form-check-label" for="AB-">
+                    AB-
+                  </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="bloodGroup" id="A-" input>
+                    <label class="form-check-label" for="A-">
+                      A-
+                    </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="bloodGroup" id="B-" input>
+                      <label class="form-check-label" for="B-">
+                        B-
+                      </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="bloodGroup" id="O+" input>
+                        <label class="form-check-label" for="O+">
+                          O+
+                        </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="bloodGroup" id="O-" input>
+                          <label class="form-check-label" for="O-">
+                            O-
+                          </label>
+                          </div>
+          </div>
+          <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+            <label for="select">कृपया बच्चे के साथ संबंध निर्दिष्ट करें</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="relationship" id="Mother" input>
+              <label class="form-check-label" for="Mother">
+                मां
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="relationship" id="Father" input>
+              <label class="form-check-label" for="Father">
+                पिता जी
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="relationship" id="Guardians" input>
+              <label class="form-check-label" for="Guardians">
+                रखवालों
+              </label>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+          <div class="inner d-none" id="page2Div" style="display:block;">
+
+            <div class="shadow p-3 mb-5 bg-white rounded my-4">
+              <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+                <label for="select">ऊंचाई दर्ज करें : </label>
+                <input name="height" type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="">
+            </div>
+            </div>
+
+            <div class="shadow p-3 mb-5 bg-white rounded my-4">
+              <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+                <label for="select">वजन दर्ज करें : </label>
+                <input name="weight" type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="">
+            </div>
+            </div>
+
+            <div class="shadow p-3 mb-5 bg-white rounded my-4">
+              <label for="select">कैसे हुआ था बच्चे का जन्म: </label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="term" id="preTerm" input>
+                <label class="form-check-label" for="preTerm">
+                    पूर्व अवधि
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="term" id="fullTerm" input>
+                <label class="form-check-label" for="fullTerm">
+                    पूरा कार्यकाल
+                </label>
+              </div>
+
+            </div>
+
+            <div class="shadow p-3 mb-5 bg-white rounded my-4">
+              <label for="select">क्या गर्भावस्था के दौरान मां को कोई संक्रमण/बीमारी हुई थी? : </label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="diseaseMother" id="diseaseMotherYes" input>
+                <label class="form-check-label" for="diseaseMotherYes">
+                    हाँ
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="disaeaseMother" id="DiseasMothereNo" input>
+                <label class="form-check-label" for="DiseaseMotherNo">
+                    नहीं 
+                </label>
+              </div>
+            </div>
+
+            <div class="shadow p-3 mb-5 bg-white rounded my-4">
+              <label for="select">Abnormal (Large or small) head: : </label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="Head" id="AbnormalYes" input>
+                <label class="form-check-label" for="AbnormalYes">
+                  Yes
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="Head" id="abNormalHeadNo" input>
+                <label class="form-check-label" for="abNormalHeadNo">
+                  No
+                </label>
+              </div>
+
+            </div>
+
+
+          
+          </div>
+
+          <div class="inner d-none" id="page3Div">
+
+            <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+              <label for="select">Extremely Short Neck : </label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="ShortNeck" id="shortNeckYes" input>
+                <label class="form-check-label" for="shortNeckYes">
+                  Yes
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="ShortNeck" id="shortNeckNo" input>
+                <label class="form-check-label" for="shortNeckNo">
+                  No
+                </label>
+              </div>
+          </div>
+
+          <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+            <label for="select">Limp Walking : </label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="Limp" id="limpYes" input>
+              <label class="form-check-label" for="limpYes">
+                Yes
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="Limp" id="limpNo" input>
+              <label class="form-check-label" for="limpNo">
+                No
+              </label>
+            </div>
+        </div>
+
+        <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+          <label for="select">White Eyes : </label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="whiteEye" id="whiteEye" input>
+            <label class="form-check-label" for="whiteEye">
+              Yes
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="whiteEye" id="whiteEyeNo" input>
+            <label class="form-check-label" for="whiteEyeNo">
+              No
+            </label>
+          </div>
+      </div>
+
+      <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+        <label for="select">Shortness Of Breath : </label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="shortnessBreath" id="breathYes" input>
+          <label class="form-check-label" for="breathYes">
+            Yes
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="shortnessBreath" id="breathNo" input>
+          <label class="form-check-label" for="breathNo">
+            No
+          </label>
+        </div>
+    </div>
+
+    <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+      <label for="select">Underweight or OverWeight : </label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="weight" id="weightYes" input>
+        <label class="form-check-label" for="weightYes">
+          Yes
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="weight" id="weightNo" input>
+        <label class="form-check-label" for="weightNo">
+          No
+        </label>
+      </div>
+  </div>
+
+          </div>
+       
+          <div class="">
+            <nav aria-label="...">
+              <ul class="d-flex justify-content-center" style="list-style-type: none;">
+                <li class="page-item active" id="page1"><a class="page-link">1</a></li>
+                <li class="page-item " id="page2"><a class="page-link">2</a></li>
+                <li class="page-item" id="page3"><a class="page-link">3</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+        <script src="paging.js" async defer></script>
+    </body>
+</html>

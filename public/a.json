@@ -1,0 +1,68 @@
+{
+    "reg":
+    [
+        {
+            "name":"Age group (0-3) ",
+            "count":10
+        },  
+        {
+            "name":"Age group (3-6)",
+            "count":15
+        },
+        {
+            "name":"Age group (6-9)",
+            "count":23
+        },
+        {
+            "name":"Age group (9-12)",
+            "count":19
+        },
+        {
+            "name":"Age group (12-15)",
+            "count":16
+        },
+        {
+            "name":"Age group (15-18)",
+            "count":13
+        }
+    ],
+    "child":
+    [
+        {
+            "name":"0-4 months",
+            "count":200,
+            "year":2016,
+            "month":2
+        },
+        {
+            "name":"4-6 months",
+            "count":300,
+            "year":2016,
+            "month":3
+        },
+        {
+            "name":"6-9 months",
+            "count":580,
+            "year":2016,
+            "month":4
+        },
+        {
+            "name":"9-12 months",
+            "count":400,
+            "year":2016,
+            "month":5
+        },
+        {
+            "name":"12-15 months",
+            "count":213,
+            "year":2016,
+            "month":7
+        },
+        {
+            "name":"Above 15 months",
+            "count":320,
+            "year":2016,
+            "month":8
+        }
+    ]
+}
