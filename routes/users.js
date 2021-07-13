@@ -15,7 +15,6 @@ router.post('/register', catchAsync(async (req, res, next) => {
         const registeredUser = await Parent.register(user, password);
         const newParent = await registeredUser.save();
         const id = registeredUser._id;
-        console.log(id);
         req.login(registeredUser, err => {
             if (err) return send("Login Failed!!");
             res.redirect('/login');

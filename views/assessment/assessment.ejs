@@ -1,345 +1,248 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Assessment</title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="pagination.css">
-    </head>
-    <body class="" style="background-color:#0A1931">
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-          <div class="container-fluid">
-              <a class="navbar-brand" href="#">Giftabled</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                  aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav">
-                      <a class="nav-link" href="/">Home</a>
-                  </div>
-                  <div class="navbar-nav">
-                    <a class="nav-link" href="basicAssessment">Slow Internet?</a>
-                  </div>
-                  <div class="navbar-nav ml-auto">
-                      <% if(!currentUser) {%>
-                      <a class="nav-link" href="/login">Login</a>
-                      <a class="nav-link" href="/register">Register</a>
-                      <% } else {%>
-                      <a class="nav-link" href="/logout">Logout</a>
-                      <% } %>
-                  </div>
-              </div>
-          </div>
-      </nav>
-        <div class="d-flex justify-content-center my-4">
 
-         
-<form action="/parents/<%=id%>/child" method="POST">
-          <div class="inner">
-            <div class="p d-block" id="page1Div">
-              
-              <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
-                <div class="jumbotron jumbotron-fluid">
-                  <div class="container">
-                    <h1 class="display-4 text-center">Add details</h1>
-                  </div>
-                </div>
-                <label for="defaultContactFormName">Name</label>
-                <input name="name" type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Enter name of child">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Assessment</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="pagination.css">
+</head>
+
+<body class="" style="background-color:#0A1931">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Giftabled</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/">Home</a>
+        </div>
+        <div class="navbar-nav">
+          <a class="nav-link" href="basicAssessment">Slow Internet?</a>
+        </div>
+        <div class="navbar-nav ml-auto">
+          <% if(!currentUser) {%>
+            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/register">Register</a>
+          <% } else {%>
+            <a class="nav-link" href="/logout">Logout</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="d-flex justify-content-center my-4">
+    <form action="/parents/<%=id%>/child" method="POST">
+      <div class="inner">
+        <div class="p d-block" id="page1Div">
+          <div class="shadow p-3 mb-3 bg-white rounded" style="width:500px;">
+            <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+                <h1 class="display-4 text-center">Add details</h1>
+              </div>
             </div>
-            <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
-              <label for="select">Gender</label>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="sex" value="male" id="MaleGender">
-                <label class="form-check-label" for="MaleGender">
-                  Male
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="sex" value="female" id="FemaleGender" input>
-                <label class="form-check-label" for="FemaleGender">
-                  Female
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="sex" value="other" id="OtherGender" input>
-                <label class="form-check-label" for="OtherGender">
-                  Other
-                </label>
-              </div>
-              
-            </div>
-            <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
-              <div class="form-group">
-                <label >Date Of Birth : </label>
-                <input type="date" name="dob" min="1000-01-01"
-                      max="3000-12-31" class="form-control">
-              </div>
-          </div> 
-          <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
-            <label for="select">Blood Group</label>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" value="A+" name="bloodGroup" id="A+">
-                <label class="form-check-label" for="A+">
-                  A+
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" value="B+" name="bloodGroup" id="B+" input>
-                <label class="form-check-label" for="B+">
-                  B+
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" value="AB+" name="bloodGroup" id="AB+" input>
-                <label class="form-check-label" for="AB+">
-                  AB+
-                </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" value="AB-" name="bloodGroup" id="AB-" input>
-                  <label class="form-check-label" for="AB-">
-                    AB-
-                  </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" value="A-" name="bloodGroup" id="A-" input>
-                    <label class="form-check-label" for="A-">
-                      A-
-                    </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" value="B-" name="bloodGroup" id="B-" input>
-                      <label class="form-check-label" for="B-">
-                        B-
-                      </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" value="O+" name="bloodGroup" id="O+" input>
-                        <label class="form-check-label" for="O+">
-                          O+
-                        </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" value="O-" name="bloodGroup" id="O-" input>
-                          <label class="form-check-label" for="O-">
-                            O-
-                          </label>
-                          </div>
+            <label for="defaultContactFormName">Name</label>
+            <input name="name" type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Enter name of child">
           </div>
-          <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+          <div class="shadow p-3 mb-3 bg-white rounded" style="width:500px;">
+            <label for="select">Gender</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="sex" value="male" id="MaleGender">
+              <label class="form-check-label" for="MaleGender">Male</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="sex" value="female" id="FemaleGender" input>
+              <label class="form-check-label" for="FemaleGender">Female</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="sex" value="other" id="OtherGender" input>
+              <label class="form-check-label" for="OtherGender">Other</label>
+            </div>
+          </div>
+          <div class="shadow p-3 mb-3 bg-white rounded" style="width:500px;">
+            <div class="form-group">
+              <label>Date Of Birth : </label>
+              <input type="date" name="dob" min="1000-01-01" max="3000-12-31" class="form-control">
+            </div>
+          </div>
+          <div class="shadow p-3 mb-3 bg-white rounded" style="width:500px;">
+            <label for="select">Blood Group</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" value="A+" name="bloodGroup" id="A+">
+              <label class="form-check-label" for="A+">A+</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" value="B+" name="bloodGroup" id="B+" input>
+              <label class="form-check-label" for="B+">B+</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" value="AB+" name="bloodGroup" id="AB+" input>
+              <label class="form-check-label" for="AB+">AB+</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" value="AB-" name="bloodGroup" id="AB-" input>
+              <label class="form-check-label" for="AB-">AB-</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" value="A-" name="bloodGroup" id="A-" input>
+              <label class="form-check-label" for="A-">A-</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" value="B-" name="bloodGroup" id="B-" input>
+              <label class="form-check-label" for="B-">B-</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" value="O+" name="bloodGroup" id="O+" input>
+              <label class="form-check-label" for="O+">O+</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" value="O-" name="bloodGroup" id="O-" input>
+              <label class="form-check-label" for="O-">O-</label>
+            </div>
+          </div>
+          <div class="shadow p-3 mb-3 bg-white rounded" style="width:500px;">
             <label for="select">Please specify relationship with child</label>
             <div class="form-check">
               <input class="form-check-input" type="radio" value="mother" name="relationship" id="Mother" input>
-              <label class="form-check-label" for="Mother">
-                Mother
-              </label>
+              <label class="form-check-label" for="Mother">Mother</label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" value="father" name="relationship" id="Father" input>
-              <label class="form-check-label" for="Father">
-                Father
-              </label>
+              <label class="form-check-label" for="Father">Father</label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" value="guardians" name="relationship" id="Guardians" input>
-              <label class="form-check-label" for="Guardians">
-                Guardians
-              </label>
+              <label class="form-check-label" for="Guardians">Guardians</label>
             </div>
+          </div>
         </div>
-
-    </div>
-    <div class="container">
+        <div class="container">
           <div class="inner d-none" id="page2Div" style="display:block;">
-
             <div class="shadow p-3 mb-5 bg-white rounded my-4">
-              <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+              <div class="shadow p-3 mb-3 bg-white rounded" style="width:500px;">
                 <label for="defaultContactFormName">Enter Height : </label>
                 <input name="height" type="number" id="defaultContactFormName" class="form-control mb-4" placeholder="">
+              </div>
             </div>
-            </div>
-
             <div class="shadow p-3 mb-5 bg-white rounded my-4">
-              <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+              <div class="shadow p-3 mb-3 bg-white rounded" style="width:500px;">
                 <label for="defaultContactFormName">Enter Weight : </label>
                 <input name="weight" type="number" id="defaultContactFormName" class="form-control mb-4" placeholder="">
+              </div>
             </div>
-            </div>
-
             <div class="shadow p-3 mb-5 bg-white rounded my-4">
               <label for="select">The child was born : </label>
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="term" value="preTerm" id="preTerm" input>
-                <label class="form-check-label" for="preTerm">
-                  Pre term
-                </label>
+                <label class="form-check-label" for="preTerm">Pre term</label>
               </div>
-
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="term" value="fullTerm" id="fullTerm" input>
-                <label class="form-check-label" for="fullTerm">
-                  Full term
-                </label>
+                <label class="form-check-label" for="fullTerm">Full term</label>
               </div>
-
             </div>
-
             <div class="shadow p-3 mb-5 bg-white rounded my-4">
               <label for="diseaseMotherYes">Did the mother have any infection/ disease during pregnancy : </label>
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="diseaseMother" value="yes" id="diseaseMotherYes" input>
-                <label class="form-check-label" for="diseaseMotherYes">
-                  Yes
-                </label>
+                <label class="form-check-label" for="diseaseMotherYes">Yes</label>
               </div>
-
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="diseaseMother" value="no" id="DiseasMothereNo" input>
-                <label class="form-check-label" for="DiseasMothereNo"></label>
-                  No
-                </label>
+                <label class="form-check-label" for="DiseasMothereNo"></label>No</label>
               </div>
             </div>
-
             <div class="shadow p-3 mb-5 bg-white rounded my-4">
               <label for="select">Abnormal (Large or small) head: : </label>
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="Head" value="yes" id="AbnormalYes" input>
-                <label class="form-check-label" for="AbnormalYes">
-                  Yes
-                </label>
+                <label class="form-check-label" for="AbnormalYes">Yes</label>
               </div>
-
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="Head" value="no" id="abNormalHeadNo" input>
-                <label class="form-check-label" for="abNormalHeadNo">
-                  No
-                </label>
+                <label class="form-check-label" for="abNormalHeadNo">No</label>
               </div>
-
             </div>
-
-
-          
           </div>
-
           <div class="inner d-none" id="page3Div">
-
-            <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
+            <div class="shadow p-3 mb-3 bg-white rounded" style="width:500px;">
               <label for="select">Extremely Short Neck : </label>
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="ShortNeck" value="yes" id="shortNeckYes" input>
-                <label class="form-check-label" for="shortNeckYes">
-                  Yes
-                </label>
+                <label class="form-check-label" for="shortNeckYes">Yes</label>
               </div>
-
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="ShortNeck" value="no" id="shortNeckNo" input>
-                <label class="form-check-label" for="shortNeckNo">
-                  No
-                </label>
+                <label class="form-check-label" for="shortNeckNo">No</label>
               </div>
-          </div>
-
-          <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
-            <label for="select">Limp Walking : </label>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="Limp" value="yes" id="limpYes" input>
-              <label class="form-check-label" for="limpYes">
-                Yes
-              </label>
             </div>
-
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="Limp" value="no" id="limpNo" input>
-              <label class="form-check-label" for="limpNo">
-                No
-              </label>
+            <div class="shadow p-3 mb-3 bg-white rounded" style="width:500px;">
+              <label for="select">Limp Walking : </label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="Limp" value="yes" id="limpYes" input>
+                <label class="form-check-label" for="limpYes">Yes</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="Limp" value="no" id="limpNo" input>
+                <label class="form-check-label" for="limpNo">No</label>
+              </div>
             </div>
-        </div>
-
-        <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
-          <label for="select">White Eyes : </label>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="whiteEye" value="yes" id="whiteEye" input>
-            <label class="form-check-label" for="whiteEye">
-              Yes
-            </label>
+            <div class="shadow p-3 mb-3 bg-white rounded" style="width:500px;">
+              <label for="select">White Eyes : </label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="whiteEye" value="yes" id="whiteEye" input>
+                <label class="form-check-label" for="whiteEye">Yes</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="whiteEye" value="no" id="whiteEyeNo" input>
+                <label class="form-check-label" for="whiteEyeNo">No</label>
+              </div>
+            </div>
+            <div class="shadow p-3 mb-3 bg-white rounded" style="width:500px;">
+              <label for="select">Shortness Of Breath : </label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="shortnessBreath" value="yes" id="breathYes" input>
+                <label class="form-check-label" for="breathYes">Yes</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="shortnessBreath" value="no" id="breathNo" input>
+                <label class="form-check-label" for="breathNo">No</label>
+              </div>
+            </div>
+            <div class="shadow p-3 mb-3 bg-white rounded" style="width:500px;">
+              <label for="select">Underweight or OverWeight : </label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="weight2" value="Yes" id="weightYes" input>
+                <label class="form-check-label" for="weightYes">Yes</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="weight2" value="No" id="weightNo" input>
+                <label class="form-check-label" for="weightNo">No</label>
+              </div>
+              <button class="btn btn-success mt-4">Submit</button>
+            </div>
           </div>
-
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="whiteEye" value="no" id="whiteEyeNo" input>
-            <label class="form-check-label" for="whiteEyeNo">
-              No
-            </label>
-          </div>
-      </div>
-
-      <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
-        <label for="select">Shortness Of Breath : </label>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="shortnessBreath" value="yes" id="breathYes" input>
-          <label class="form-check-label" for="breathYes">
-            Yes
-          </label>
-        </div>
-
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="shortnessBreath" value="no" id="breathNo" input>
-          <label class="form-check-label" for="breathNo">
-            No
-          </label>
-        </div>
+    </form>
+    <div class="">
+      <nav aria-label="...">
+        <ul class="d-flex justify-content-center" style="list-style-type: none;">
+          <li class="page-item active" id="page1"><a class="page-link">1</a></li>
+          <li class="page-item " id="page2"><a class="page-link">2</a></li>
+          <li class="page-item" id="page3"><a class="page-link">3</a></li>
+        </ul>
+      </nav>
     </div>
-
-    <div class="shadow p-3 mb-3 bg-white rounded"  style="width:500px;">
-      <label for="select">Underweight or OverWeight : </label>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="weight2" value="Yes" id="weightYes" input>
-        <label class="form-check-label" for="weightYes">
-          Yes
-        </label>
-      </div>
-
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="weight2" value="No" id="weightNo" input>
-        <label class="form-check-label" for="weightNo">
-          No
-        </label>
-      </div>
-      <button class="btn btn-success mt-4">Submit</button>
   </div>
+  </div>
+  <script src="/paging.js" async defer></script>
+</body>
 
-          </div>
-          
-        </form>       
-          <div class="">
-            <nav aria-label="...">
-              <ul class="d-flex justify-content-center" style="list-style-type: none;">
-                <li class="page-item active" id="page1"><a class="page-link">1</a></li>
-                <li class="page-item " id="page2"><a class="page-link">2</a></li>
-                <li class="page-item" id="page3"><a class="page-link">3</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-        <script src="/paging.js" async defer></script>
-    </body>
 </html>

@@ -1,5 +1,3 @@
-console.log("Working!");
-
 let page1 = document.querySelector("#page1");
 let page2 = document.querySelector("#page2");
 let page3 = document.querySelector("#page3");

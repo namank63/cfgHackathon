@@ -18,6 +18,11 @@ router.get('/parents/:id/basicAssessment', isLoggedIn, catchAsync(async (req, re
     res.render('assessment/basicAssessment', {id});
 }))
 
+router.get('/parents/:id/assessment', isLoggedIn, catchAsync(async (req, res) => {
+    const id = req.params.id;
+    res.render('assessment/assessment', {id});
+}))
+
 router.post('/parents/:id/child', isLoggedIn, catchAsync(async (req, res) => {
     const parent = await Parent.findById(req.params.id);
     const {name, sex, dob, bloodGroup, 

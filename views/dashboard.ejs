@@ -216,7 +216,6 @@
                                                         const data2 = await response.json();
                                                        const lati=data2.coord.lat;
                                                        const longi=data2.coord.lon;
-                                                       console.log(data2);
                                                     
                                                         const marker2= L.marker([lati, longi]).addTo(mymap);
                                                           
@@ -409,7 +408,6 @@
         
         
         
-        console.log(dataPoints);
         $.getJSON("a.json", function(data) {  
             $.each(data, function(key, value){
                 //console.log(key);

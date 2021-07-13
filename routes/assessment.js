@@ -32,7 +32,6 @@ router.post('/', isLoggedIn, catchAsync(async (req, res) => {
 // })
 
 router.post('/login/assessment', async (req, res)=>{
-    console.log(req.body);
     const {name, sex, dob, bloodGroup, 
         relationship, height, weight, term, 
         diseaseMother, Head, ShortNeck, Limp, 
@@ -46,7 +45,6 @@ router.post('/login/assessment', async (req, res)=>{
     });
     newAns.answers.push();
     await newAns.save();
-    console.log(newAns);
     res.send("Done!");
 })
 
