@@ -18,7 +18,7 @@ DataBaseConnect();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 app.use(require('express-session')({
-    secret: "secretsecretsecretsecretsecret",
+    secret: process.env.EXPRESS_SECRET,
     resave: false,
     saveUninitialized: true
 }))
@@ -73,8 +73,8 @@ app.use('/', assessment);
 app.use('/', child);
 
 app.post('/sms', async(req, res) => {
-    var accountSid = process.env.API_KEY; 
-    var authToken = process.env.AUTH_TOKEN;   
+    var accountSid = process.env.TWILIO_API_KEY; 
+    var authToken = process.env.TWILIO_AUTH_TOKEN;   
     
     var client = new twilio(accountSid, authToken);
     

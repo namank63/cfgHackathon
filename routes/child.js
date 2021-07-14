@@ -54,8 +54,8 @@ router.post('/parents/:id/child', isLoggedIn, catchAsync(async (req, res) => {
     await parent.save();
 
     // UnComment to send Remender
-    const accountSid = process.env.API_KEY; 
-    const authToken = process.env.AUTH_TOKEN;
+    const accountSid = process.env.TWILIO_API_KEY;
+    const authToken = process.env.TWILIO_AUTH_TOKEN;
     const client = new twilio(accountSid, authToken);
     const mailTransporter = await nodemailer.createTransport({
         service: 'gmail',
