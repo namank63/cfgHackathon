@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const catchAsync = require('../utils/catchAsync');
 const Parent = require('../models/parent');
-const {isLoggedIn} = require('../middleware');
+const {isLoggedIn} = require('../utils/middleware');
 const Child = require('../models/child');
 const Question = require('../models/responses');
 

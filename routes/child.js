@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router({ mergeParams: true });
-const {isLoggedIn} = require('../middleware');
+const {isLoggedIn} = require('../utils/middleware');
 const Parent = require('../models/parent');
 const Child = require('../models/child');
 const Question = require('../models/responses');
@@ -67,11 +67,11 @@ router.post('/parents/:id/child', isLoggedIn, catchAsync(async (req, res) => {
         from: process.env.SENDER_MAIL,
         to: process.env.RECEIVER_MAIL,
         subject: 'Registration added!!',
-        text: 'Hey! New user registered.'
+        text: `Hello ${parent.username}, your registration completed successfully`
     };
 
     await client.messages.create({
-        body: 'This is a test message!!',
+        body: `Hello ${parent.username}, all data of ${newChild.name} is saved successfully for this month. Fill in the details again after 3 months.`,
         to: process.env.RECEIVER_NUMBER,  
         from: process.env.SENDER_NUMBER,
     })
@@ -85,6 +85,5 @@ router.post('/parents/:id/child', isLoggedIn, catchAsync(async (req, res) => {
 
     res.redirect(`/parents/${req.params.id}/child`);
 }))
-
 
 module.exports = router;

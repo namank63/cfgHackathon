@@ -8,7 +8,6 @@ const methodOverride = require('method-override');
 
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-const passportLocalMongoose = require('passport-local-mongoose');
 const Parent = require('./models/parent');
 const Question = require('./models/responses');
 const Child = require('./models/child');
